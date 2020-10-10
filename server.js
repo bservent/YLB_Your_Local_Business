@@ -1,7 +1,13 @@
 const express = require('express');
 const app = express();
-const PORT = 4666;
+
 const ctrl = require('./controllers');
+require('dotenv').config();
+const PORT = process.env.PORT || 4666;
+
+// Connect to the db
+const db = require('./models');
+
 
 app.set('view engine', 'ejs');
 
