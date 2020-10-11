@@ -18,6 +18,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   
   
   module.exports = {
-    Business: require('./Business'),
-    Product: require('./Product')
-  };
+    Business: require('./Business')}
+  modeoProduct: require('./Product')
+  

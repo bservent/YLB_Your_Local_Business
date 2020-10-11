@@ -8,7 +8,7 @@ const businessSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    businessvalues: String,
+    businessValues: String,
     category: String,
     images: String,
     address :[],
@@ -20,4 +20,4 @@ const businessSchema = new mongoose.Schema({
 }) 
 
 
-module.exports = mongoose.model('Business',businessSchema);
+module.exports = mongoose.model('Business', businessSchema);
