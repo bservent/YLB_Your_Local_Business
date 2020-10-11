@@ -6,39 +6,31 @@
     <title>Business Info</title>
 </head>
 <body>
-    <h1>Business Information:</h1>
-      <main>
-        <form action="/business" method="POST">
-            <div>
-                Name:<h2><%= business.name %></h2>
-            </div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/business">All Businesses</a>
+        <a href="/business/new">Add Business</a>
+    </nav>
+    <h1>Business Information</h1>
+        
+    <div>
+        <p><strong>Name:</strong> <%= business.name %></p>
+        <p><strong>Owner:</strong> <%= business.owner %></p>
+        <p><strong>Mission Statement:</strong> <%= business.businesValues %></p>
+        <p><strong>Business Type:</strong> <%= business.category %></p>
+    </div>
+    <div>
+        <strong>Address:</strong> 
+        <%= business.address.streetNumber %>,
+        <%= business.address.streetName %>,
+        <%= business.address.city %>,
+        <%= business.address.state %>,
+    </div>
+    <p><strong>Contact:</strong> <%= business.contact %></p>
 
-            <div>
-                Owner:<h2><%= business.owner %></h2>
-            </div>
-
-            <div>
-                Mission Statement:<h2><%= business.businessValues %></h2>
-            </div>
-
-            <div>
-                Business Type:<h2><%= business.category %></h2>
-            </div>
-
-            <div>
-                Images:<h2><%= business.images %></h2>
-            </div>
-
-            <div>
-                Address<h2><%= business.address.streetName %></h2>
-            </div>
-
-            <div>
-                Contact:<h2><%= business.contact %></h2>
-            </div>
-
-            <button type="submit">Add Business</button>
-        </form>
-      </main>
+    <form action="/business/<%=business._id%>/edit" method="GET">
+        <input type="submit" value="Edit Business Info"/>
+    </form>
+      
 </body>
 </html>

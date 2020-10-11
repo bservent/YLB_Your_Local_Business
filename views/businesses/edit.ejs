@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Business Page</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/business">All Businesses</a>
+        <a href="/business/new">Add Business</a>
+    </nav>
+
+     <h1>Business Admin Page</h1>
+
+    <form action="/business/<%=business._id%>?_method=PUT" method="POST">
+        <div>
+            <label for="name"><strong><br>Name:</br></strong></label>
+            <input type="text" name="name" id="name" value="<%=business.name%>">
+        </div>
+        <div>
+            <label for="owner"><strong><br>Owner:</br></strong></label>
+            <input type="text" name="owner" id="owner" value="<%=business.owner%>">
+        </div>
+        <div>
+            <label for="businessValues"><strong><br>Mission Statement:</br></strong></label>
+            <input type="text" name="businessValues" id="businessValues" value="<%=business.businessValues%>">
+        </div>
+        <div>
+            <label for="category"><strong><br>Business Type:</br></strong></label>
+            <input type="text" name="category" id="insurance" value="<%=business.category%>">
+        </div>
+        <div>
+            <label for="address"><strong><br>Address:</br></strong></label>
+            <input type="text" name="address.streetNumber" id="streetNumber" value="<%=business.address.streetNumber%>">
+            <input type="text" name="address.streetName" id="streetName" value="<%=business.address.streetName%>">
+            <input type="text" name="address.city" id="city" value="<%=business.address.city%>">
+            <input type="text" name="address.state" id="state" value="<%=business.address.state%>">
+        </div> 
+        <div>
+            <label for="contact"><strong><br>Contact:</br></strong></label>
+            <input type="text" name="contact" id="insurance" value="<%=business.contact%>">
+        </div>
+        <div>
+            <p><input type="submit" value="Submit Changes"></p>
+        </div>
+        
+    </form>
+   
+</body>
+</html>
