@@ -8,7 +8,7 @@ const businessSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    businessvalues: String,
+    businessValues: String,
     category: String,
     images: String,
     address :[],
