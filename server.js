@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
-
+const methodOverride = require('method-override');
 const ctrl = require('./controllers');
 require('dotenv').config();
 const PORT = process.env.PORT || 4666;
+const bodyparser = require('body-parser');
 
 // Connect to the db
 const db = require('./models');
+
+// MIDDLEWARE
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 
 
 app.set('view engine', 'ejs');
