@@ -11,7 +11,16 @@ const businessSchema = new mongoose.Schema({
     businessValues: String,
     category: String,
     images: String,
-    address :[],
+    address :{
+        streetNumber: Number,
+        streetName: String,
+        city : String,
+        state: {
+            type: String,
+            min:2,
+            max:2
+        }
+    },
     contact: Number,
     products:[{
         type:mongoose.Schema.Types.ObjectId,

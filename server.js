@@ -10,14 +10,23 @@ const bodyparser = require('body-parser');
 // Connect to the db
 const db = require('./models');
 
+// Middleware
 app.use(bodyParser.urlencoded({extended: false}));
-
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+//custom middleware
+app.use((req, res, next) => {
+    const method = req.method;
+    const path = req.url;
+    const timestamp = new Date().toLocaleTimeString();
+    console.log(`${method} ${path} ${timestamp}`);
+    next(); // Allow the request to move on to the next middleware in the chain
+  });
+
 app.get('/', (req, res) => {
-    res.send('<h1> THIS IS HOME </h1>');
+    res.render('home');
 });
 
 app.use('/business', ctrl.businesses);
