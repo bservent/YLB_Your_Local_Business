@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Info</title>
+</head>
+<body>
+    <h1>Business Information:</h1>
+      <main>
+        <form action="/business" method="POST">
+            <div>
+                Name:<h2><%= business.name %></h2>
+            </div>
+
+            <div>
+                Owner:<h2><%= business.owner %></h2>
+            </div>
+
+            <div>
+                Mission Statement:<h2><%= business.businessValues %></h2>
+            </div>
+
+            <div>
+                Business Type:<h2><%= business.category %></h2>
+            </div>
+
+            <div>
+                Images:<h2><%= business.images %></h2>
+            </div>
+
+            <div>
+                Address<h2><%= business.address.streetName %></h2>
+            </div>
+
+            <div>
+                Contact:<h2><%= business.contact %></h2>
+            </div>
+
+            <button type="submit">Add Business</button>
+        </form>
+      </main>
+</body>
+</html>
