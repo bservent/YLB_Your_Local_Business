@@ -9,7 +9,7 @@
     <%- include('nav') %> 
      <h1>Business Admin Page</h1>
 
-    <form action="/business/<%=business._id%>?_method=PUT" method="POST">
+    <form action="/businesses/<%=business._id%>?_method=PUT" method="POST">
         <div>
             <label for="name"><strong><br>Name:</br></strong></label>
             <input type="text" name="name" id="name" value="<%=business.name%>">
