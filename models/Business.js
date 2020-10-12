@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+
 const businessSchema = new mongoose.Schema({
     name: {
-        type:String,
-        required:true
+        type: String,
+        required: true
     },
     owner:{
         type: String,
@@ -26,7 +27,7 @@ const businessSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref: 'Business'
     }]
-}) 
+});
 
 
 module.exports = mongoose.model('Business', businessSchema);

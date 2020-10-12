@@ -24,8 +24,8 @@ router.get('/:businessId', (req, res) => {
         res.render('businesses/show', {
             business: foundBusiness
         });
-    })
-})
+    });
+});
 
 // create route - POST
 router.post('/',(req,res)=>{
@@ -46,9 +46,9 @@ router.post('/',(req,res)=>{
         db.Business.find({},(err,allBusinesses)=>{
             res.render('businesses',{
                 businesses: allBusinesses
-            })
-        })
-    })
+            });
+        });
+    });
 });
 
 // edit route - GET
@@ -60,8 +60,8 @@ router.get('/:businessId/edit',(req,res)=>{
         res.render('businesses/edit', {
             business: foundBusiness
         });
-    })
-})
+    });
+});
 
 // edit route - PUT
 router.put('/:businessId',(req,res)=>{
@@ -69,7 +69,15 @@ router.put('/:businessId',(req,res)=>{
         (err,updatedBusiness)=>{
             if(err) return console.log(err)
             res.redirect(`/business/${updatedBusiness._id}`);     
-        })
-})
+        });
+});
+
+//delete route
+router.delete('/:businessId', (req, res) => {
+    db.Business.findByIdAndDelete(req.params.businessId, (err, deletedBusiness) => {
+        if (err) return console.log(err);
+        res.redirect('/businesses');
+    });
+});
 
 module.exports = router;

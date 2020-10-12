@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+</head>
+<body>
+    <%- include('nav') %>
+    <h1>Edit Your Product</h1>
+      <main>
+        <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+            <div>
+                <label for="category">Category:</label>
+                <input value="<%= product.category %>" type="text" name="category" id="category">
+            </div>
+            <div>
+                <label for="name">Product Name:</label>
+                <input value="<%= product.name %>" type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <input value="<%= product.description %>" type="text" name="description" id="description">
+            </div>
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input value="<%= product.quantity %>" type="text" name="quantity" id="quantity">
+            </div>
+            <div>
+                <label for="price">Price:</label>
+                <input value="<%= product.price %>" type="number" name="price" id="price">
+            </div>
+            <div>
+                <label for="images">Images</label>
+                <input value="<%= product.images %>" type="text" name="images" id="images">
+            </div>
+            <div>
+                <input type="submit" value="Submit Changes">
+            </div>
+
+        </form>
+      </main>
+</body>
+</html>
