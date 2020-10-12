@@ -68,7 +68,7 @@ router.put('/:businessId',(req,res)=>{
     db.Business.findByIdAndUpdate(req.params.businessId,req.body,{new:true},
         (err,updatedBusiness)=>{
             if(err) return console.log(err)
-            res.redirect(`/business/${updatedBusiness._id}`);     
+            res.redirect(`/businesses/${updatedBusiness._id}`);     
         });
 });
 
