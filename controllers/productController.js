@@ -25,8 +25,10 @@ router.get('/new', (req, res) => {
 
 //show route - GET products
 router.get('/:productId', (req, res) => {
-    db.Product.findById(req.params.productId, (err, foundProduct) => {
-        if (err) return console.log(err);
+    db.Product.findById(req.params.productId)
+        .populate('business')
+        .exec((err, foundProduct) => {
+            if (err) return console.log(err);
         res.render('products/show', {
         product: foundProduct
         });
