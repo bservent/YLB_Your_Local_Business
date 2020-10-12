@@ -33,12 +33,42 @@ router.post('/', (req, res) => {
     db.Product.create(req.body, (err, newProduct) => {
         db.Product.find({}, (err, allProducts) => {
             if (err) return console.log(err);
-            res.render('products',{
+            res.render('products', {
                 products: allProducts
             });
         });
     });
 });
 
+// edit route - Get
+router.get('/:productId/edit', (req,res) => {
+    db.Product.findById(req.params.productId, 
+        (err, foundProduct) => {
+        if(err) return console.log(err);
+        res.render('products/edit', {
+            product: foundProduct
+        });
+    });
+});
+
+//edit route - Put
+router.put('/:productId', (req,res) => {
+    db.Product.findByIdAndUpdate(req.params.productId,
+        req.body, 
+        {new:true},
+        (err,updatedProduct) => {
+            if(err) return console.log(err)
+            res.redirect(`/products/${updatedProduct._id}`);     
+        });
+});
+
+//delete route
+router.delete('/:productId', (req, res) => {
+    db.Product.findByIdAndDelete(req.params.productId, 
+        (err, deletedProduct) => {
+        if (err) return console.log(err);
+        res.redirect('/products');
+    });
+});
 
 module.exports = router;
