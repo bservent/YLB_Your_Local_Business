@@ -22,12 +22,16 @@ const businessSchema = new mongoose.Schema({
             max:2
         }
     },
-    contact: Number,
+    contact: {
+        type:Number,
+        min : 1000000000,
+        max : 9999999999
+    },
     products:[{
         type:mongoose.Schema.Types.ObjectId,
         ref: 'Business'
     }]
-});
+},{timestamps:true});
 
 
 module.exports = mongoose.model('Business', businessSchema);

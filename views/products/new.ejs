@@ -7,9 +7,8 @@
 </head>
 <body>
     <%- include('nav') %>
-    <h1>Add Your Product</h1>
-      <main>
-        <form action="/products" method="POST">
+    <h1>Add Your Product</h1>  
+    <form action="/products" method="POST">
             <div>
                 <label for="category">Category:</label>
                 <input type="text" name="category" id="category">
@@ -24,19 +23,29 @@
             </div>
             <div>
                 <label for="quantity">Quantity:</label>
-                <input type="text" name="quantity" id="quantity">
+                <input type="number" name="quantity" id="quantity">
             </div>
             <div>
-                <label for="price">Price:</label>
-                <input type="number" name="price" id="price">
+                <label for="price">Unit Price:</label>
+                <input type="decimal" name="price" id="price">
             </div>
             <div>
                 <label for="images">Images</label>
                 <input type="text" name="images" id="images">
             </div>
-
-            <button type="submit">Add Product</button>
-        </form>
-      </main>
+            <div>
+                <select name="business" id="business">
+                    <option value="">--Select the Business--</option>
+                    <%for(let i=0;i<businesses.length;i++) {%>
+                            <option value="<%=businesses[i]._id%>"><%= businesses[i].name %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Add Product</button>
+            </div>
+            
+    </form>
+      
 </body>
 </html>
