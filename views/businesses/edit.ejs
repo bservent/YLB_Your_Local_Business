@@ -6,12 +6,7 @@
     <title>Edit Business Page</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/business">All Businesses</a>
-        <a href="/business/new">Add Business</a>
-    </nav>
-
+    <%- include('nav') %> 
      <h1>Business Admin Page</h1>
 
     <form action="/business/<%=business._id%>?_method=PUT" method="POST">
