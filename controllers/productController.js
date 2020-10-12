@@ -14,10 +14,16 @@ router.get('/', (req, res) => {
 
 //create route - GET
 router.get('/new', (req, res) => {
-    res.render('products/new');
+    db.Business.find({},(err,allBusinesses)=>{
+        if(err) return console.log(err);
+        res.render('products/new',{
+            businesses : allBusinesses
+        });
+    })
+    
 });
 
-//show route
+//show route - GET products
 router.get('/:productId', (req, res) => {
     db.Product.findById(req.params.productId, (err, foundProduct) => {
         if (err) return console.log(err);
@@ -27,16 +33,20 @@ router.get('/:productId', (req, res) => {
     });
 });
 
-//create route - POST
-
+//create route - POST products
 router.post('/', (req, res) => {
-    db.Product.create(req.body, (err, newProduct) => {
-        db.Product.find({}, (err, allProducts) => {
-            if (err) return console.log(err);
-            res.render('products', {
-                products: allProducts
-            });
-        });
+        db.Product.create(req.body, (err, newProduct) => {
+            console.log(req.body);
+            if(err) return console.log(err);
+            db.Business.findById(req.body.business,(err,foundBusiness)=>{
+                if(err) return console.log(err);
+                foundBusiness.products.push(newProduct._id);
+                foundBusiness.save((err,saveBusiness)=>{
+                    if(err) return console.log(err);
+                    res.redirect(`/products/${newProduct._id}`);
+                })
+
+            });        
     });
 });
 
