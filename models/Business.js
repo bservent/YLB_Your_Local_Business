@@ -29,7 +29,7 @@ const businessSchema = new mongoose.Schema({
     },
     products:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref: 'Business'
+        ref: 'Product'
     }]
 },{timestamps:true});
 

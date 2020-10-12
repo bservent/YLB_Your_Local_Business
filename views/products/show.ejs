@@ -10,12 +10,13 @@
     <h1>Product Information</h1>
         
     <div>
+        <img src="<%= product.images %>" alt="<%= product.name%>">
         <p><strong>Category:</strong> <%= product.category %></p>
         <p><strong>Name:</strong> <%= product.name %></p>
         <p><strong>Description:</strong> <%= product.description %></p>
         <p><strong>Quantity:</strong> <%= product.quantity %></p>
         <p><strong>Price:</strong> <%= product.price %></p>
-        <p><strong>Images:</strong> <%= product.images %></p>
+        
     </div>
 
     <form action="/products/<%=product._id%>/edit" method="GET">

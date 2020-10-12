@@ -14,6 +14,7 @@
         <p><strong>Owner:</strong> <%= business.owner %></p>
         <p><strong>Mission Statement:</strong> <%= business.businessValues %></p>
         <p><strong>Business Type:</strong> <%= business.category %></p>
+        <img src="<%=business.images%>" alt="<%=business.name%>">
     </div>
     <div>
         <strong>Address:</strong> 
@@ -24,6 +25,11 @@
     </div>
     <p><strong>Contact:</strong> <%= business.contact %></p>
 
+    <ul>
+        <% for(let i=0;i<business.products.length;i++) { %>
+          <a href="/products/<%= business.products[i]._id %>"><li><%=business.products[i].name%></li></a>
+        <% } %>
+    </ul>
     <form action="/businesses/<%=business._id%>/edit" method="GET">
         <input type="submit" value="Edit Business Info"/>
     </form>
