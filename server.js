@@ -29,7 +29,8 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.use('/business', ctrl.businesses);
+app.use('/businesses', ctrl.businesses);
+app.use('/products', ctrl.products);
 
 app.get('*', (req, res) => {
     res.send('<h1> Requested page not found. </h1>');
