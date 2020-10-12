@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema({
     },
     business:{
         type:mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
+        ref: 'Business'
     }
 },{timestamps:true});
 

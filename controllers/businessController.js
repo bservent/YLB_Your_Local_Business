@@ -17,14 +17,17 @@ router.get('/new', (req,res) => {
     res.render('businesses/new');
 });
 
-//show route
+//show route - individual Business
 router.get('/:businessId', (req, res) => {
-    db.Business.findById(req.params.businessId, (err, foundBusiness) => {
-        if (err) console.log(err);
-        res.render('businesses/show', {
-            business: foundBusiness
-        });
-    });
+    db.Business.findById(req.params.businessId)
+    .populate('products')
+    .exec((err,foundBusiness)=>{
+        //console.log(foundBusiness);
+        if(err) return console.log(err);
+        res.render('businesses/show',{
+            business : foundBusiness
+        })
+    })
 });
 
 // create route - POST
