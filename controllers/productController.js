@@ -80,6 +80,7 @@ router.delete('/:productId', (req, res) => {
         (err, deletedProduct) => {
         if (err) return console.log(err);
         res.redirect('/products');
+        
     });
 });
 
