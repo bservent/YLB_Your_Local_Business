@@ -1,3 +1,4 @@
 module.exports = 
 {businesses: require('./businessController'), 
-products: require('./productController')};
+products: require('./productController'),
+search: require('./searchController')};
