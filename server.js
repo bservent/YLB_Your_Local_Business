@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('bootsrap');
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -16,7 +17,10 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
-//custom middleware
+//Add Styling
+app.use(express.static(`${__dirname}/public`));
+
+//Custom middleware
 app.use((req, res, next) => {
     const method = req.method;
     const path = req.url;

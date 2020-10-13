@@ -77,10 +77,16 @@ router.put('/:businessId',(req,res)=>{
 
 //delete route
 router.delete('/:businessId', (req, res) => {
-    db.Business.findByIdAndDelete(req.params.businessId, (err, deletedBusiness) => {
+    db.Business.findByIdAndDelete(req.params.businessId, 
+        (err, deletedBusiness) => {
         if (err) return console.log(err);
-        res.redirect('/businesses');
+    db.Product.deleteMany({_id: { $in: deletedBusiness.products}}, 
+        (err) => {
+            if (err) return console.log(err);
+            res.redirect('/businesses');
+        });
     });
 });
+
 
 module.exports = router;
