@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('bootsrap');
+//require('bootstrap'); 
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -17,7 +17,7 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
-//Add Styling
+//Serve Styling Files
 app.use(express.static(`${__dirname}/public`));
 
 //Custom middleware
