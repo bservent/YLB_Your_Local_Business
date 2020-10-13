@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Info</title>
+</head>
+<body>
+    <%- include('nav') %>
+    <h1>Business Information</h1>
+        
+    <div>
+        <p><strong>Name:</strong> <%= business.name %></p>
+        <p><strong>Owner:</strong> <%= business.owner %></p>
+        <p><strong>Mission Statement:</strong> <%= business.businessValues %></p>
+        <p><strong>Business Type:</strong> <%= business.category %></p>
+        <img src="<%=business.images%>" alt="<%=business.name%>">
+    </div>
+    <div>
+        <strong>Address:</strong> 
+        <%= business.address.streetNumber %>,
+        <%= business.address.streetName %>,
+        <%= business.address.city %>,
+        <%= business.address.state %>,
+    </div>
+    <p><strong>Contact:</strong> <%= business.contact %></p>
+
+    <ul>
+        <% for(let i=0;i<business.products.length;i++) { %>
+          <a href="/products/<%= business.products[i]._id %>"><li><%=business.products[i].name%></li></a>
+        <% } %>
+    </ul>
+    <form action="/businesses/<%=business._id%>/edit" method="GET">
+        <input type="submit" value="Edit Business Info"/>
+    </form>
+
+    <form action="/businesses/<%=business._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Business"/>
+    </form>
+      
+</body>
+</html>

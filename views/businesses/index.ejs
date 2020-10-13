@@ -6,9 +6,10 @@
     <title>Business Index</title>
 </head>
 <body>
-    <h1>Business Index</h1>
+    <%- include('nav') %>
+    <h1>Business Index</h1>  
     <ul>
-        <% for (let i = 0; i < businesses.length; i++) %> {
+        <% for (let i = 0; i < businesses.length; i++)  { %>
             <li>
                 <a href="/businesses/<%= businesses[i]._id %> ">
                         <%= businesses[i].name %> 

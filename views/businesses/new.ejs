@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Business</title>
+</head>
+<body>
+    <%- include('nav') %>
+    <h1>Add Your Business</h1>
+      <main>
+        <form action="/businesses" method="POST">
+            <div>
+                <label for="name">Business Name:</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="owner">Owner:</label>
+                <input type="text" name="owner" id="owner">
+            </div>
+            <div>
+                <label for="businessValues">Mission Statement:</label>
+                <input type="text" name="businessValues" id="businessValues">
+            </div>
+            <div>
+                <label for="category">Business Type:</label>
+                <input type="text" name="category" id="category">
+            </div>
+            <div>
+                <label for="images">Images</label>
+                <input type="url" name="images" id="images">
+            </div>
+
+            <div>
+                Address:<br>
+                <label for="streetNumber">Street Number:</label>
+                <input type="text" name="streetNumber" id="streetNumber">
+                <label for="streetName">Street Name:</label>
+                <input type="text" name="streetName" id="streetName">
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city">
+                <select name="states" id="states">
+                    <option value="">--Select the State--</option>
+                    <% const states=['AK', 'AL', 'AR', 'AS', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'GU', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MP', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UM', 'UT', 'VA', 'VI', 'VT', 'WA', 'WI', 'WV', 'WY'];
+                    for(let i=0;i<states.length;i++) {%>
+                            <option value="<%=states[i] %>"><%= states[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+            
+            <div>
+                <label for="contact">Contact:</label>
+                <input type="text" name="contact" id="contact">
+            </div>
+
+            <button type="submit">Add Business</button>
+        </form>
+      </main>
+</body>
+</html>
