@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 
 app.use('/businesses', ctrl.businesses);
 app.use('/products', ctrl.products);
+app.use('/search' , ctrl.search);
 
 app.get('*', (req, res) => {
     res.send('<h1> Requested page not found. </h1>');

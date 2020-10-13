@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Index</title>
+</head>
+<body>
+    <%- include('nav') %>
+    <h1>Search  Results</h1> 
+    <ul>
+
+        
+            <%for (let i = 0; i < results[0].searchResults.length; i++)  {%>
+
+                    <li>
+                        <a href="/businesses/<%= results[0].searchResults[i]._id %>">
+                                <%= results[0].searchResults[i].name %> 
+                        </a>
+                    </li>
+            <%}%>
+        
+           <% for (let i = 0; i < results[1].searchResults.length; i++)  {%>
+
+                <li>
+                    <a href="/products/<%= results[1].searchResults[i]._id %>">
+                            <%= results[1].searchResults[i].name %> 
+                    </a>
+                </li>
+            <%}%>
+        
+
+    </ul>
+  
+
+    
+
+</body>
+</html>
