@@ -83,9 +83,8 @@ footer .nav-link {
 .logo {
     max-width: 350px;
     max-height: 350px;
-    padding-left: 10px;
     margin-top: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 10px; 
 }
 
 .hero {
@@ -97,14 +96,16 @@ footer .nav-link {
 .main-heading {
     background: var(--primary-dark);
     max-width: 500px;
-    height: 500px;
-    padding: 80px;
+    padding: 40px;
     display: inline;
+    position: relative;
 }
 
 .about-us {
     display: inline-block;
-    color: black;
-    padding-left: 700px;
-    padding-right: 150px;
+    background-color: var(--primary-dark); 
+    color:white;
+    padding-left: 900px;
+    padding-right: 175px;
+    margin-top: -60%;
 }
