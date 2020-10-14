@@ -6,7 +6,27 @@
     <title>Business Index</title>
 </head>
 <body>
-    <%- include('nav') %>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+                <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses/new">Add Business</a>
+                <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+                <h3>Connecting Communities Through Local Business!</h3>
+                <li class="search"></li>
+              <input type="text" placeholder="Search">
+            </ul>
+        </nav>
+    </header>
     <h1>Business Index</h1>  
     <ul>
         <% for (let i = 0; i < businesses.length; i++)  { %>
@@ -18,4 +38,5 @@
         <% } %>   
     </ul>
 </body>
+<%- include('../footer') %>
 </html>
