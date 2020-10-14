@@ -14,13 +14,13 @@ body {
 
 header {
     background: var(--primary-dark);
-    position: fixed;
     width: 100%;
+    position: fixed;
 }
 
 footer {
     background: var(--primary-dark);
-    width: 100% 
+    width: 100%;
 }
 
 nav {
@@ -28,11 +28,10 @@ nav {
 }
 
 ul li {
-    display: inline;
+    display: inline-block;
 }
 
 .nav-bar {
-    display: inline-block;
     justify-content: center;
 }
 
@@ -51,48 +50,10 @@ header .nav-link:hover {
     border-bottom: 4px solid white;
 }
 
-.main-heading {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40%;
-}
-
-
-.hero {
-    height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1505682750263-f3f9e519c565?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-    background-size: cover;
-}
-
-.main-heading {
-    background: var(--primary-dark);
-    max-width: 500px;
-    position: relative;
-    top: 30%;
-    left: 20%;
-    padding: 25px;
-}
-
-
-
-h1 {
-    color: white;
-    font-size: 36px;
-    letter-spacing: 3px;
-    color: rgb(240, 179, 67);
-    justify-content: center;
-}
-
-h3 {
+.header-slogan {
     color:rgb(240, 179, 67);
     display: inline;
     padding-left: 80px;
-}
-
-.logo {
-    max-width: 200px;
-    max-height: 200px;
-    padding: 25px;
 }
 
 input {
@@ -106,11 +67,11 @@ footer .nav-link {
 }
 
 #home {
-    padding-left: 525px;
+    padding-left: 100px;
 }
 
 #contact {
-    padding-right: 375px;
+    padding-right: 300px;
 }
 
 .nav-social {
@@ -119,4 +80,38 @@ footer .nav-link {
     position: static;
 }
 
+.logo {
+    max-width: 495px;
+    max-height: 400px;
+    padding-left: 10px;
+    margin-top: 100px;
+}
 
+.hero {
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover;
+}
+
+.main-heading {
+    background: var(--primary-dark);
+    max-width: 500px;
+    padding: 100px;
+    padding-bottom: 120px;
+    display: inline-block;
+}
+
+.about-us {
+    background: var(--primary-dark);
+    color: white;
+    padding-left: 700px;
+    padding-right: 250px;
+    padding-bottom: 1px;
+    padding-top: 12px;
+    margin-top: -200px;
+    font-size: 30px;
+}
+
+.contact-item{
+    display: block;
+}

@@ -52,12 +52,22 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+<<<<<<< HEAD
 // Route for passport authentication
 app.post('/login',passport.authenticate('local',{
     successRedirect: '/businesses',
     failureRedirect : '/login',
     failureFlash : true
 }))
+=======
+app.get('/aboutus', (req, res) => {
+    res.render('aboutus');
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
+>>>>>>> submaster
 
 app.use('/businesses', ctrl.businesses);
 app.use('/products', ctrl.products);
