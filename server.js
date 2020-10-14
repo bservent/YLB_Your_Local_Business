@@ -33,6 +33,14 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/aboutus', (req, res) => {
+    res.render('aboutus');
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
+
 app.use('/businesses', ctrl.businesses);
 app.use('/products', ctrl.products);
 app.use('/search' , ctrl.search);
