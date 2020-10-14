@@ -1,5 +1,5 @@
 require('dotenv').config();
-//require('bootsrap');
+//require('bootstrap'); 
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -11,11 +11,13 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const initializePassport = require('./passport-config');
+const users = [];
 initializePassport(passport,
     email => users.find(user => user.email === email),
     id => users.find(user => user.id === id)
 );
-const users = [];
+
+
 
 
 // Connect to the db
@@ -34,7 +36,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Add Styling
+//Serve Styling Files
 app.use(express.static(`${__dirname}/public`));
 
 //Custom middleware
