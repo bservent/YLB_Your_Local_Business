@@ -14,13 +14,21 @@ body {
 
 header {
     background: var(--primary-dark);
-    display: inline-block;
     position: fixed;
     width: 100%;
 }
 
+footer {
+    background: var(--primary-dark);
+    width: 100% 
+}
+
 nav {
     padding: 5px;
+}
+
+ul li {
+    display: inline;
 }
 
 .nav-bar {
@@ -38,7 +46,7 @@ nav {
     text-decoration: none;
 }
 
-.nav-link:hover {
+header .nav-link:hover {
     padding-bottom: 8px;
     border-bottom: 4px solid white;
 }
@@ -61,15 +69,21 @@ nav {
     position: relative;
     top: 30%;
     left: 20%;
-    padding: 30px;
+    padding: 25px;
 }
 
 h1 {
     color: white;
-    font-size: 38px;
+    font-size: 36px;
     letter-spacing: 3px;
     color: rgb(240, 179, 67);
     justify-content: center;
+}
+
+h3 {
+    color:rgb(240, 179, 67);
+    display: inline;
+    padding-left: 80px;
 }
 
 .logo {
@@ -77,4 +91,28 @@ h1 {
     max-height: 200px;
     padding: 25px;
 }
+
+input {
+    margin-left: 350px;
+    font-size:16px;
+}
+
+footer .nav-link {
+    font-size: 12px;
+    display: inline-block;
+}
+
+#home {
+    padding-left: 550px;
+}
+
+#contact {
+    padding-right: 475px;
+}
+
+.nav-social {
+    max-width: 25px;
+    max-height: 25px; 
+}
+
 
