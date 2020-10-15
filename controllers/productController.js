@@ -15,6 +15,9 @@ router.get('/', (req, res) => {
 //create route - GET
 router.get('/new', (req, res) => {
     db.Business.find({},(err,allBusinesses)=>{
+        if (!req.session.currentUser) {
+            return res.redirect('/auth/login');
+        }
         if(err) return console.log(err);
         res.render('products/new',{
             businesses : allBusinesses
