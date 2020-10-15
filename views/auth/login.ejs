@@ -3,26 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Express Blog</title>
+  <link rel="stylesheet" href="/css/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>Login</title>
 </head>
 <body>
   <main>
-    <h1>Login</h1>
+    <!-- <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <h3>Connecting Communities Through Local Business!</h3>       
+            </ul>
+        </nav>
+      </form>
+    </header> -->
 
-    <form action="/auth/login" method="POST">
+    <!-- <section id="heading" class="hero">
+      <div class="main-heading"> 
+        <img class="logo" src="../images/YLBlogo.png" alt="logo">
+        <h1>Welcome to <u>YOUR Local Business</u></h1>
+      </div>
+    </section> -->
+  <form action="/auth/login" method="POST"></form>
+    <div class="main">
+      <p class="sign" align="center">Sign in</p>
+      <form class="form1" action="/auth/login" method="POST">
+        <input class="un " type="text" align="center" placeholder="email">
+        <input class="pass" type="password" align="center" placeholder="Password">
+        <a class="submit" align="center">Sign in</a>
+        <p class="forgot" align="center"><a href="/auth/register">Forgot Password?</p>
+      </form>             
+    </div>
+  </form>
 
+   
+    <!-- <form action="/auth/login" method="POST">
       <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" />
       </div>
-
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" />
       </div>
-      
       <button type="submit">Login</button>
-    </form>
+    </form> -->
+
+    <!-- <footer>
+        <div> 
+            <nav class="nav-bar">
+                <ul>
+                  <li class="nav-item"></li>
+                    <a id="home" class="nav-link" href="/">Home</a>
+                  <li class="nav-item"></li>
+                    <a class="nav-link" href="/products">Products</a>
+                  <li class="nav-item"></li>
+                    <a class="nav-link" href="/businesses">Businesses</a>
+                  <li class="nav-item"></li>
+                    <a class="nav-link" href="/aboutus">About Us</a>
+                  <li class="nav-item"></li>
+                    <a id="contact" class="nav-link" href="/contact">Contact</a>
+                  <li class="nav-item"></li>
+                    <img class="nav-social" src="/images/facebook.png">
+                  <li class="nav-item"></li>
+                    <img class="nav-social" src="/images/instagram.png">
+                  <li class="nav-item"></li>
+                    <img class="nav-social" src="/images/twitter-logo-on-badge.png">
+                </ul>
+            </nav>
+        </div>
+    </footer> -->
   </main>
 </body>
 </html>

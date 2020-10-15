@@ -1,0 +1,82 @@
+:root {
+    --primary-dark: rgb(0, 0, 0, .65);
+}
+* {
+     box-sizing: border-box;
+}
+body {
+    opacity: .8;
+    padding: 0;
+    margin: 0;
+    font-family: 'Francois One', sans-serif;
+}
+header {
+    background: var(--primary-dark);
+    width: 100%;
+    position: fixed;
+}
+footer {
+    background: var(--primary-dark);
+    width: 100%
+}
+nav {
+    padding: 5px;
+}
+ul li {
+    display: inline-block;
+}
+.nav-item {
+    padding: 10px;
+    list-style: none;
+}
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+header .nav-link:hover {
+    padding-bottom: 8px;
+    border-bottom: 4px solid white;
+}
+.header-slogan {
+    color:rgb(240, 179, 67);
+    display: inline;
+    padding-left: 80px;
+}
+input {
+    margin-left: 250px;
+    font-size:16px;
+}
+footer .nav-link {
+    font-size: 12px;
+    display: inline-block;
+}
+#home {
+    padding-left: 100px;
+}
+#contact {
+    padding-right: 300px;
+}
+.nav-social {
+    max-width: 25px;
+    max-height: 25px;
+}
+.hero {
+    height: 100vh;
+    background-image: url(/images/simon-berger-997kl-eqJds-unsplash.jpg);
+    background-size: cover;
+}
+.button {
+    background: var(--primary-dark);
+    padding: 10px;
+    margin-top: 10px;
+    margin-right:300px;
+}
+.product-info {
+    background: var(--primary-dark);
+    max-width: 300px;
+    padding: 20px;
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: 600px;
+    color:white;
+}
