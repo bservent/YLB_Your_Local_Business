@@ -24,11 +24,7 @@
                 <a class="nav-link" href="/contact">Contact</a>
                 <h3 class="header-slogan">Product Information</h3>
               <li class="search"></li>
-<<<<<<< HEAD
               <input type="search" placeholder="search" name="search" id="search">
-=======
-              <input type="text" placeholder="Search">
->>>>>>> submaster
             </ul>
         </nav>
       </form>
@@ -44,20 +40,12 @@
                 <p><strong>Images:</strong> <%= product.images %></p>
               </div>
             <form class="button" action="/products/<%=product._id%>/edit" method="GET">
-<<<<<<< HEAD
-                <input type="submit" value="Edit Product Info"/>
-            </form>
-            <form class="button" action="/products/<%=product._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Product"/>
-            </form>
-=======
                 <input class="edit" type="submit" value="Edit Product Info"/>
             </form>
         
             <form class="button" action="/products/<%=product._id %>?_method=DELETE" method="POST">
                 <input class="delete" type="submit" value="Delete Product"/>
             </form> 
->>>>>>> submaster
       </form>
       </section>
     <%- include('../footer') %>
