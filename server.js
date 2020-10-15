@@ -1,43 +1,44 @@
-require('dotenv').config();
 //require('bootstrap'); 
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const methodOverride = require('method-override');
-const app = express();
-const ctrl = require('./controllers');
-const PORT = process.env.PORT || 4666;
-const bodyparser = require('body-parser');
-const passport = require('passport');
-const flash = require('express-flash');
 const session = require('express-session');
-const initializePassport = require('./passport-config');
-const users = [];
-initializePassport(passport,
-    email => users.find(user => user.email === email),
-    id => users.find(user => user.id === id)
-);
+
+require('dotenv').config();
+const app = express();
+const PORT = process.env.PORT || 4666;
 
 
-
-
-// Connect to the db
-const db = require('./models');
-
-// Middleware
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(methodOverride('_method'));
+// SET view engine
 app.set('view engine', 'ejs');
-app.use(flash());
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave:false,
-    saveUninitialized: false
-}))
-app.use(passport.initialize());
-app.use(passport.session());
 
+// Controllers
+const ctrl = require('./controllers');
+
+//-------- MIDDLEWARE ---------------//
 //Serve Styling Files
 app.use(express.static(`${__dirname}/public`));
+
+// Express Session
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false, // Only save the session if a property changes
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24   // expires in 24 hrs
+    }
+  }));
+
+// Body Parser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+//Method Override
+app.use(methodOverride('_method'));
+// Logging middleware
+app.use(morgan(':method : url'));
+
 
 //Custom middleware
 app.use((req, res, next) => {
@@ -52,12 +53,7 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-// Route for passport authentication
-app.post('/login',passport.authenticate('local',{
-    successRedirect: '/businesses',
-    failureRedirect : '/login',
-    failureFlash : true
-}))
+
 app.get('/aboutus', (req, res) => {
     res.render('aboutus');
 });
@@ -69,7 +65,7 @@ app.get('/contact', (req, res) => {
 app.use('/businesses', ctrl.businesses);
 app.use('/products', ctrl.products);
 app.use('/search' , ctrl.search);
-app.use('/',ctrl.login);
+app.use('/auth',ctrl.login);
 
 app.get('*', (req, res) => {
     res.send('<h1> Requested page not found. </h1>');
@@ -78,5 +74,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is working on port: ${PORT}`);
 });
-
-module.exports = passport;

@@ -14,6 +14,10 @@ router.get('/', (req, res) => {
 
 //create route - GET
 router.get('/new', (req,res) => {
+    // Redirect user to login page if not logged in
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
     res.render('businesses/new');
 });
 
@@ -45,6 +49,15 @@ router.post('/',(req,res)=>{
     delete req.body.city;
     delete req.body.states;
     console.log(req.body);
+
+      // Redirect user to login page if not logged in
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
+  // Add currentUser to the request.body for the user/author association
+  req.body.user = req.session.currentUser
+  
     db.Business.create(req.body,(err,createdBusiness)=>{
         db.Business.find({},(err,allBusinesses)=>{
             res.render('businesses',{
