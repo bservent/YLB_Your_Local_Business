@@ -3,42 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/businessNew.css">
     <title>New Business</title>
 </head>
 <body>
-    <%- include('nav') %>
-    <h1>Add Your Business</h1>
-      <main>
-        <form action="/businesses" method="POST">
+<header>
+    <nav class="nav-bar">
+        <ul>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/">Home</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/products">Products</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/businesses">Businesses</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/businesses/new">Add Business</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/aboutus">About Us</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/contact">Contact</a>
+          <h3 class="header-slogan" >Add Your Business!</h3>
+          <li class="search"></li>
+          <input type="text" placeholder="Search">
+        </ul>
+    </nav>
+</header>
+      <main class="hero">
+        <form class="maing-heading" action="/businesses" method="POST">
             <div>
-                <label for="name">Business Name:</label>
-                <input type="text" name="name" id="name">
+                <input value="Business Name" type="text" name="name" id="name">
             </div>
             <div>
-                <label for="owner">Owner:</label>
-                <input type="text" name="owner" id="owner">
+                <input value="Owner" type="text" name="owner" id="owner">
             </div>
             <div>
-                <label for="businessValues">Mission Statement:</label>
-                <input type="text" name="businessValues" id="businessValues">
+                <input value="Mission Statement" type="text" name="businessValues" id="businessValues">
             </div>
             <div>
-                <label for="category">Business Type:</label>
-                <input type="text" name="category" id="category">
+                <input value="Business Type" type="text" name="category" id="category">
             </div>
             <div>
-                <label for="images">Images</label>
-                <input type="url" name="images" id="images">
+                <input value="Images" type="url" name="images" id="images">
             </div>
 
             <div>
-                Address:<br>
-                <label for="streetNumber">Street Number:</label>
-                <input type="text" name="streetNumber" id="streetNumber">
-                <label for="streetName">Street Name:</label>
-                <input type="text" name="streetName" id="streetName">
-                <label for="city">City:</label>
-                <input type="text" name="city" id="city">
+                <br>
+                <input value="Street Number" type="text" name="streetNumber" id="streetNumber">
+                <input value="Street Name" type="text" name="streetName" id="streetName">
+                <input value="City" type="text" name="city" id="city">
                 <select name="states" id="states">
                     <option value="">--Select the State--</option>
                     <% const states=['AK', 'AL', 'AR', 'AS', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'GU', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MP', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UM', 'UT', 'VA', 'VI', 'VT', 'WA', 'WI', 'WV', 'WY'];
@@ -49,12 +62,13 @@
             </div>
             
             <div>
-                <label for="contact">Contact:</label>
-                <input type="text" name="contact" id="contact">
+                <input value="Phone Number" type="text" name="contact" id="contact">
             </div>
 
             <button type="submit">Add Business</button>
         </form>
       </main>
 </body>
-</html>
+<%- include('../footer') %>
+
+    
