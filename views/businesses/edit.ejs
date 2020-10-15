@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/businessEdit.css">
     <title>Edit Business Page</title>
 </head>
 <body>
-    <%- include('nav') %> 
-     <h1>Business Admin Page</h1>
-
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses/new">Add Business</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+              <h3 class="header-slogan" >Edit Your Business!</h3>
+              <li class="search"></li>
+              <input type="text" placeholder="Search">
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
     <form action="/businesses/<%=business._id%>?_method=PUT" method="POST">
         <div>
             <label for="name"><strong><br>Name:</br></strong></label>
@@ -42,10 +63,10 @@
             <input type="text" name="images" id="images" value="<%=business.images%>">
         </div>
         <div>
-            <p><input type="submit" value="Submit Changes"></p>
+            <p><input class="submit-edits" type="submit" value="Submit Changes"></p>
         </div>
-        
+    </section>
     </form>
-   
+    <%- include('../footer') %>
 </body>
 </html>

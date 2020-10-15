@@ -3,12 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/productEdit.css">
     <title>Edit Product</title>
 </head>
 <body>
-    <%- include('nav') %>
-    <h1>Edit Your Product</h1>
-      <main>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+                <h3 class="header-slogan">Edit Your Product Here!</h3>
+            </ul>
+        </nav>
+    </header>  
+      <section class="hero">
         <form action="/products/<%=product._id%>?_method=PUT" method="POST">
             <div>
                 <label for="category">Category:</label>
@@ -31,14 +48,15 @@
                 <input value="<%= product.price %>" type="number" name="price" id="price">
             </div>
             <div>
-                <label for="images">Images</label>
+                <label for="images">Images:</label>
                 <input value="<%= product.images %>" type="text" name="images" id="images">
             </div>
             <div>
-                <input type="submit" value="Submit Changes">
+                <input class="submit" type="submit" value="Submit Changes">
             </div>
 
         </form>
-      </main>
+      </section>
+    <%- include('../footer') %> 
 </body>
 </html>
