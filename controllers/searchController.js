@@ -41,4 +41,18 @@ router.get('/:searchString', (req, res) => {
     
 });
 
+// Test for jquery or DOM
+// if(typeof jQuery!=='undefined'){
+//     console.log('jQuery Loaded');
+// }
+// else{
+//     console.log('not loaded yet');
+// }
+var $;
+$ = require('jquery');
+$('#search').click(function() {
+  return console.log('clicked');
+});
+
+
 module.exports = router;
