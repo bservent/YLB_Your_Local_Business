@@ -4,40 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/businessShow.css">
     <title>Business Info</title>
 </head>
 <body>
-    <%- include('nav') %>
-    <h1>Business Information</h1>
-        
-    <div>
-        <p><strong>Name:</strong> <%= business.name %></p>
-        <p><strong>Owner:</strong> <%= business.owner %></p>
-        <p><strong>Mission Statement:</strong> <%= business.businessValues %></p>
-        <p><strong>Business Type:</strong> <%= business.category %></p>
-        <img src="<%=business.images%>" alt="<%=business.name%>">
-    </div>
-    <div>
-        <strong>Address:</strong> 
-        <%= business.address.streetNumber %>,
-        <%= business.address.streetName %>,
-        <%= business.address.city %>,
-        <%= business.address.state %>,
-    </div>
-    <p><strong>Contact:</strong> <%= business.contact %></p>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+                <h3 class="header-slogan">Business Information</h3>
+              <li class="search"></li>
+              <input type="text" placeholder="Search">
+            </ul>
+        </nav>
+    </header>  
+    <section class="hero">
+        <div class="business-info">
+            <p><strong>Name:</strong> <%= business.name %></p>
+            <p><strong>Owner:</strong> <%= business.owner %></p>
+            <p><strong>Mission Statement:</strong> <%= business.businessValues %></p>
+            <p><strong>Business Type:</strong> <%= business.category %></p>
+            <p><strong>Contact:</strong> <%= business.contact %></p>
+            <strong>Address:</strong> 
+            <%= business.address.streetNumber %>,
+            <%= business.address.streetName %>,
+            <%= business.address.city %>,
+            <%= business.address.state %>,
+        </div>
+        <div>
+            <ul>
+                <% for(let i=0;i<business.products.length;i++) { %>
+                <a href="/products/<%= business.products[i]._id %>">
+                    <li class="products"><%=business.products[i].name%></li></a>
+                <% } %>
+            </ul>
+        </div>
 
-    <ul>
-        <% for(let i=0;i<business.products.length;i++) { %>
-          <a href="/products/<%= business.products[i]._id %>"><li><%=business.products[i].name%></li></a>
-        <% } %>
-    </ul>
-    <form action="/businesses/<%=business._id%>/edit" method="GET">
-        <input type="submit" value="Edit Business Info"/>
+    <form class="button" action="/businesses/<%=business._id%>/edit" method="GET">
+        <input class ="edit" type="submit" value="Edit Business Info"/>
     </form>
   
-    <form action="/businesses/<%=business._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Business"/>
+    <form class="button" action="/businesses/<%=business._id %>?_method=DELETE" method="POST">
+        <input class="delete" type="submit" value="Delete Business"/>
     </form>
-      
+    </section>
+    <%- include('../footer') %>
 </body>
 </html>

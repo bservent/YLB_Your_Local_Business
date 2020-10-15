@@ -79,13 +79,15 @@ footer .nav-link {
 
 .hero {
     height: 100vh;
-    background-image: url(/images/simon-berger-997kl-eqJds-unsplash.jpg);
+    background-image: url(/images/ruben-bagues-1sLjKN8VgRs-unsplash.jpg);
     background-size: cover;
 }
 
 .button {
     padding: 6px;
-    margin-top: 10px; 
+    margin-top: 10px;
+    margin-right:300px;
+    margin-left: 365px;
 }
 
 .delete {
@@ -100,9 +102,9 @@ footer .nav-link {
     padding: 4px;
 }
 
-.product-info {
+.business-info {
     background: var(--primary-dark);
-    max-width: 300px;
+    max-width: 400px;
     padding: 20px;
     display: inline-block;
     margin-top: 100px;
