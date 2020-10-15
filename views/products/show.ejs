@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Product Info</title>
 </head>
 <body>
-    <%- include('nav') %>
     <h1>Product Information</h1>
-        
-    <div>
-        <img src="<%= product.images %>" alt="<%= product.name%>">
-        <p><strong>Category:</strong> <%= product.category %></p>
-        <p><strong>Name:</strong> <%= product.name %></p>
-        <p><strong>Description:</strong> <%= product.description %></p>
-        <p><strong>Quantity:</strong> <%= product.quantity %></p>
-        <p><strong>Price:</strong> <%= product.price %></p>
-        <a href="/businesses/<%= product.business._id %>"><li><%=product.business.name%></li></a>
-        
-    </div>
-   
-    
-  
-
-    <form action="/products/<%=product._id%>/edit" method="GET">
-        <input type="submit" value="Edit Product"/>
-    </form>
-
-    <form action="/products/<%=product._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Product"/>
-    </form>
-      
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+                <h3>Connecting Communities Through Local Business!</h3>
+                <li class="search"></li>
+              <input type="text" placeholder="Search">
+            </ul>
+        </nav>
+    </header>
+    <section id="heading" class="hero">
+      <div class="main-heading"> 
+        <img class="logo" src="../images/YLBlogo.png" alt="logo">
+        <h1>Welcome to <u>YOUR Local Business</u></h1>
+      </div>
+    </section>  
 </body>
 </html>
