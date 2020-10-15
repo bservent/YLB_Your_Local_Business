@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Index</title>
+    <link rel="stylesheet" href="../css/businessindex.css">
 </head>
 <body>
     <header>
@@ -15,28 +16,35 @@
                 <a class="nav-link" href="/products">Products</a>
               <li class="nav-item"></li>
                 <a class="nav-link" href="/businesses">Businesses</a>
-                <li class="nav-item"></li>
+              <li class="nav-item"></li>
                 <a class="nav-link" href="/businesses/new">Add Business</a>
-                <li class="nav-item"></li>
+              <li class="nav-item"></li>
                 <a class="nav-link" href="/aboutus">About Us</a>
               <li class="nav-item"></li>
                 <a class="nav-link" href="/contact">Contact</a>
-                <h3>Connecting Communities Through Local Business!</h3>
-                <li class="search"></li>
+              <h3 class="header-slogan" >Local Business Index!</h3>
+              <li class="search"></li>
               <input type="text" placeholder="Search">
             </ul>
         </nav>
     </header>
-    <h1>Business Index</h1>  
-    <ul>
-        <% for (let i = 0; i < businesses.length; i++)  { %>
-            <li>
-                <a href="/businesses/<%= businesses[i]._id %> ">
-                        <%= businesses[i].name %> 
-                </a>
-            </li>
-        <% } %>   
-    </ul>
+    <section id="heading" class="hero">
+        <div class="main-heading"> 
+          <img class="logo" src="../images/YLBlogo.png" alt="logo">
+        </div>
+        <div class="business-index">
+        <h1>Business Index</h1>  
+        <ul>
+            <% for (let i = 0; i < businesses.length; i++)  { %>
+                <li>
+                    <a class="business-name" href="/businesses/<%= businesses[i]._id %> ">
+                            <%= businesses[i].name %> 
+                    </a>
+                </li>
+            <% } %>   
+        </ul>
+        </div>
+    </section>
 </body>
 <%- include('../footer') %>
 </html>

@@ -3,73 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Index Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-    <script src="/scripts/app.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
+    <title>Product Index</title>
+    <link rel="stylesheet" href="../css/productindex.css">
 </head>
 <body>
-<header>
-    <nav class="nav-bar">
-        <ul>
-          <li class="nav-item"></li>
-            <a class="nav-link" href="/">Home</a>
-          <li class="nav-item"></li>
-            <a class="nav-link" href="/products">Products</a>
-          <li class="nav-item"></li>
-            <a class="nav-link" href="/businesses">Businesses</a>
-          <li class="nav-item"></li>
-            <a class="nav-link" href="/aboutus">About Us</a>
-          <li class="nav-item"></li>
-            <a class="nav-link" href="/contact">Contact</a>
-            <h3>Connecting Communities Through Local Business!</h3>
-            <li class="search"></li>
-          <input type="text" placeholder="Search">
-        </ul>
-    </nav>
-</header>
-<section id="heading" class="hero">
-  <div>
-    <ul>
-        <% for (let i = 0; i < products.length; i++)  { %>
-            <li>
-                <a href="/products/<%= products[i]._id %>">
-                        <%= products[i].name %> 
-                </a>
-            </li>
-        <% } %>   
-    </ul>
-  </div>
-</section>
-</header>
-<footer>
-    <div>
+    <header>
         <nav class="nav-bar">
             <ul>
               <li class="nav-item"></li>
-                <a id="home" class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/">Home</a>
               <li class="nav-item"></li>
                 <a class="nav-link" href="/products">Products</a>
               <li class="nav-item"></li>
                 <a class="nav-link" href="/businesses">Businesses</a>
               <li class="nav-item"></li>
+                <a class="nav-link" href="/products/new">Add Product</a>
+              <li class="nav-item"></li>
                 <a class="nav-link" href="/aboutus">About Us</a>
               <li class="nav-item"></li>
-                <a id="contact" class="nav-link" href="/contact">Contact</a>
-              <li class="nav-item"></li>
-                <img class="nav-social" src="/images/facebook.png">
-                <li class="nav-item"></li>
-                <img class="nav-social" src="/images/instagram.png">
-                <li class="nav-item"></li>
-                <img class="nav-social" src="/images/twitter-logo-on-badge.png">
+                <a class="nav-link" href="/contact">Contact</a>
+              <h3 class="header-slogan" >Local Product Index!</h3>
+              <li class="search"></li>
+              <input type="text" placeholder="Search">
             </ul>
         </nav>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </header>
+    <section id="heading" class="hero">
+        <div class="main-heading"> 
+          <img class="logo" src="../images/YLBlogo.png" alt="logo">
+        </div>
+        <div class="product-index">
+        <h1>Product Index</h1>
+        <ul>
+            <% for (let i = 0; i < products.length; i++)  { %>
+                <li>
+                    <a class="products-name" href="/products/<%= products[i]._id %>">
+                            <%= products[i].name %> 
+                    </a>
+                </li>
+            <% } %>   
+        </ul>
+    </section>
+    <%- include('../footer') %>
 </body>
 </html>
