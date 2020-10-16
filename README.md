@@ -46,11 +46,13 @@ User Schema
 
 Create Schema/Populate
 
-Create Auth
+Create Backend
 
-Create Search
+Create Frontend
 
 Stylize Pages
+
+Create Auth&Search
 
 Create ReadMe
 
