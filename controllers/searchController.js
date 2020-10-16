@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-router.get('/:searchString', (req, res) => {
-    const searchString = req.params.searchString;
+router.get('/', (req, res) => {
+    console.log(req.query);
+    const searchString = req.query.search;
     db.Business.find({$or:[
         {name :{$regex: searchString}},{category :{$regex: searchString}},
         {businessValues :{$regex: searchString}},{owner :{$regex: searchString}}
@@ -29,10 +30,9 @@ router.get('/:searchString', (req, res) => {
                             }
                             ]
             };
-            //console.log("the busines results are " , bizResults);
             console.log("The product results are " , prodResults);
+            console.log("The business results are ", bizResults);
             res.render('search/index', context);
-            //res.render('search/index', context);
         });
 
         

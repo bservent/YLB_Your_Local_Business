@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/productNew.css">
     <title>New Product</title>
 </head>
 <body>
-    <%- include('nav') %>
-    <h1>Add Your Product</h1>  
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+                <h3 class="header-slogan">Add Your Product Here!</h3>
+            </ul>
+        </nav>
+    </header>  
+    <section class="hero">
     <form action="/products" method="POST">
             <div>
                 <label for="category">Category:</label>
@@ -46,6 +64,7 @@
             </div>
             
     </form>
-      
+    </section>
+    <%- include('../footer') %>
 </body>
 </html>

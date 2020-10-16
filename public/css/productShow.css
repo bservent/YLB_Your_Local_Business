@@ -11,11 +11,10 @@ body {
     margin: 0;
     font-family: 'Francois One', sans-serif;
 }
-
 header {
     background: var(--primary-dark);
-    position: fixed;
     width: 100%;
+    position: fixed;
 }
 
 footer {
@@ -28,95 +27,80 @@ nav {
 }
 
 ul li {
-    display: inline;
+    display: inline-block;
 }
 
-.nav-bar {
-    display: inline-block;
-    justify-content: center;
-}
 
 .nav-item {
     padding: 10px;
     list-style: none;
 }
-
 .nav-link {
     color: white;
     text-decoration: none;
 }
-
 header .nav-link:hover {
     padding-bottom: 8px;
     border-bottom: 4px solid white;
 }
-
-.main-heading {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40%;
-}
-
-
-.hero {
-    height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1505682750263-f3f9e519c565?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-    background-size: cover;
-}
-
-.main-heading {
-    background: var(--primary-dark);
-    max-width: 500px;
-    position: relative;
-    top: 30%;
-    left: 20%;
-    padding: 25px;
-}
-
-
-
-h1 {
-    color: white;
-    font-size: 36px;
-    letter-spacing: 3px;
-    color: rgb(240, 179, 67);
-    justify-content: center;
-}
-
-h3 {
+.header-slogan {
     color:rgb(240, 179, 67);
     display: inline;
     padding-left: 80px;
 }
-
-.logo {
-    max-width: 200px;
-    max-height: 200px;
-    padding: 25px;
-}
-
 input {
     margin-left: 250px;
     font-size:16px;
 }
-
 footer .nav-link {
     font-size: 12px;
     display: inline-block;
 }
 
 #home {
-    padding-left: 525px;
+    padding-left: 100px;
 }
 
 #contact {
-    padding-right: 375px;
+    padding-right: 300px;
 }
 
 .nav-social {
     max-width: 25px;
     max-height: 25px; 
-    position: static;
 }
 
+
+.hero {
+    height: 100vh;
+    background-image: url(/images/simon-berger-997kl-eqJds-unsplash.jpg);
+    background-size: cover;
+}
+
+.button {
+    padding: 6px;
+    margin-top: 10px; 
+}
+
+.delete {
+    background: var(--primary-dark);
+    color: white;
+    padding: 4px;
+}
+
+.edit {
+    background: var(--primary-dark);
+    color: white;
+    padding: 4px;
+}
+
+.product-info {
+    background: var(--primary-dark);
+    max-width: 300px;
+    padding: 20px;
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: 600px;
+    color:white;
+}
 

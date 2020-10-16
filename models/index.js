@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   
   module.exports = {
     Business: require('./Business'),
-    Product: require('./Product')
+    Product: require('./Product'),
+    User: require('./User')
 }
   

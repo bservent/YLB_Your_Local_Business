@@ -1,39 +1,64 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Index</title>
+    <link rel="stylesheet" href="../css/businessindex.css">
 </head>
 <body>
-    <%- include('nav') %>
-    <h1>Search  Results</h1> 
-    <ul>
-
-        
+    <header>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses/new">Add Business</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+              <h3 class="header-slogan" >Local Business Index!</h3>
+              <li class="search"></li>
+              <input type="text" placeholder="Search">
+            </ul>
+        </nav>
+    </header>
+    <section id="heading" class="hero">
+        <div class="main-heading"> 
+          <img class="logo" src="../images/YLBlogo.png" alt="logo">
+        </div>
+        <div class="business-index">
+        <h5>Search Results</h5> 
+        <ul>
             <%for (let i = 0; i < results[0].searchResults.length; i++)  {%>
-
-                    <li>
-                        <a href="/businesses/<%= results[0].searchResults[i]._id %>">
-                                <%= results[0].searchResults[i].name %> 
-                        </a>
-                    </li>
-            <%}%>
-        
-           <% for (let i = 0; i < results[1].searchResults.length; i++)  {%>
-
                 <li>
-                    <a href="/products/<%= results[1].searchResults[i]._id %>">
-                            <%= results[1].searchResults[i].name %> 
+                    <a class="business-name" href="/businesses/<%= results[0].searchResults[i]._id %>">
+                            <%= results[0].searchResults[i].name %> 
                     </a>
+                    <p style="font-family: 'Times New Roman'; font-size: 18px; color:lime;""><strong>
+                      Business owned by <%= results[0].searchResults[i].owner %>. Promotes <%= results[0].searchResults[i].businessValues %> 
+                    </strong></p>
                 </li>
             <%}%>
-        
-
-    </ul>
-  
-
-    
-
+            <% for (let i = 0; i < results[1].searchResults.length; i++)  {%>
+                <li>
+                    <a class="business-name" href="/products/<%= results[1].searchResults[i]._id %>">
+                            <%= results[1].searchResults[i].name %> 
+                    </a>
+                    <p style="font-family: 'Times New Roman'; font-size: 18px; color:lime;"><strong>
+                      This product <%= results[1].searchResults[i].description %>.Exclusively available through YLB.
+                    </strong> </p>
+                </li>
+            <%}%>
+        </ul>
+        </div>
+    </section>
 </body>
+<%- include('../footer') %>
 </html>

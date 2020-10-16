@@ -3,14 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index File</title>
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="../controllers/searchController.js" defer></script>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/products">All Products</a>
-        <a href="/businesses">All Businesses</a>
+<header>
+  <form action="/search" method="GET">
+    <nav class="nav-bar">
+        <ul>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/">Home</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/products">Products</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/businesses">Businesses</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/aboutus">About Us</a>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="/contact">Contact</a>
+            <h3>Connecting Communities Through Local Business!</h3>
+              <input type="search" placeholder="search" name="search" id="search">        
+        </ul>
     </nav>
-    <h1>Welcome to YLB</h1>
+  </form>
+</header>
+<section id="heading" class="hero">
+  <div class="main-heading"> 
+    <img class="logo" src="../images/YLBlogo.png" alt="logo">
+    <h1>Welcome to <u>YOUR Local Business</u></h1>
+  </div>
+</section>
+<footer>
+    <div>
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a id="home" class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a id="contact" class="nav-link" href="/contact">Contact</a>
+              <li class="nav-item"></li>
+                <img class="nav-social" src="/images/facebook.png">
+              <li class="nav-item"></li>
+                <img class="nav-social" src="/images/instagram.png">
+              <li class="nav-item"></li>
+                <img class="nav-social" src="/images/twitter-logo-on-badge.png">
+            </ul>
+        </nav>
+    </div>
+</footer>
 </body>
 </html>

@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/productindex.css">
 </head>
 <body>
-    <%- include('nav') %>
-    <h1>Product Index</h1>  
-    <ul>
-        <% for (let i = 0; i < products.length; i++)  { %>
-            <li>
-                <a href="/products/<%= products[i]._id %>">
-                        <%= products[i].name %> 
-                </a>
-            </li>
-        <% } %>   
-    </ul>
+    <header>
+      <form action="/search" method="GET">
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products">Products</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/businesses">Businesses</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/products/new">Add Product</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/aboutus">About Us</a>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/contact">Contact</a>
+              <h3 class="header-slogan" >Local Product Index!</h3>
+              <li class="search"></li>
+              <input type="search" placeholder="search" name="search" id="search">
+            </ul>
+        </nav>
+      </form>
+    </header>
+    <section id="heading" class="hero">
+        <div class="main-heading"> 
+          <img class="logo" src="../images/YLBlogo.png" alt="logo">
+        </div>
+        <div class="product-index">
+        <h1>Product Index</h1>
+        <ul>
+            <% for (let i = 0; i < products.length; i++)  { %>
+                <li>
+                    <a class="products-name" href="/products/<%= products[i]._id %>">
+                            <%= products[i].name %> 
+                    </a>
+                </li>
+            <% } %>   
+        </ul>
+    </section>
+    <%- include('../footer') %>
 </body>
 </html>
