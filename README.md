@@ -26,7 +26,9 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 
 ![product:show](./public/images/productShowPage.jpg)
 
-![profile:edit](./public/images/staticAboutCompanyPage.jpg)
+![business:about](./public/images/staticAboutCompanyPage.jpg)
+
+![business:admin](./public/images/businessOwnerPage.jpg)
 
 ## Data Models
 
