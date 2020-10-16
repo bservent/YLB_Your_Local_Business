@@ -18,9 +18,9 @@ The business user will be able to update, delete, and add products to their resp
 
 The consumer client users have the ability to search for products/services via business or product search.
 
-There will be a log for businesses to update their business home page or their products. 
+There will be a login for businesses to update their business home page or their products. 
 
-There will be a log in for Consumers to claim local discounts and special offers.
+There will be a login for consumers to claim local discounts and special offers.
 
 ## Wireframes
 
