@@ -10,7 +10,7 @@ We are proud to serve local businesses and help them grow their customer base. A
 
 ## User Story
 
-User will navigate home page. There will be a nav bar with about page, businesses, products, sign up, and contact to guide user throughout website.
+User will navigate home page. There will be a nav bar with about page, businesses, products, sign up, and contact.
 
 The business user will have a marketing platform to market themselves and will be connected to their products/services page.
 
