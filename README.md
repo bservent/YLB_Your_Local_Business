@@ -34,26 +34,48 @@ There will be a login for consumers to claim local discounts and special offers.
 
 ## Data Models
 
-Business Schema
+Business Schema:
+  
   name
+  
   owner
+  
   businessValues
+  
   category
+  
   images
+  
   address
+  
   contact
+  
   products
 
-Product Schema
+Product Schema:
+  
   category
+  
   name
+  
   description
+  
   quantity
+  
   price
+  
   images
+  
   business
 
-User Schema
+User Schema:
+
+  name
+  
+  email
+  
+  password
+  
 
 ## ERD
 
