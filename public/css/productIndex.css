@@ -85,13 +85,13 @@ footer .nav-link {
 
 .hero {
     height: 100vh;
-    background-image: url(../images/steve-richey-6xqAK6oAeHA-unsplash.jpg);
+    background-image: url(../images/annie-spratt-0hkd3waz4H4-unsplash.jpg);
     background-size: cover;
 }
 
 .main-heading {
     background: var(--primary-dark);
-    max-width: 300px;
+    max-width: 250px;
     padding: 40px;
     display: inline-block;
     margin-top: 125px;

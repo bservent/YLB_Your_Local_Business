@@ -32,12 +32,10 @@
     <section class="hero">
               <div class="product-info">
                 <p><strong>Category:</strong> <%= product.category %></p>
-                <p><strong>Business:</strong> <%= product.business %></p>
                 <p><strong>Product Name:</strong> <%= product.name %></p>
                 <p><strong>Description:</strong> <%= product.description %></p>
                 <p><strong>Quantity:</strong> <%= product.quantity %></p>
                 <p><strong>Price:</strong> <%= product.price %></p>
-                <p><strong>Images:</strong> <%= product.images %></p>
               </div>
             <form class="button" action="/products/<%=product._id%>/edit" method="GET">
                 <input class="edit" type="submit" value="Edit Product Info"/>

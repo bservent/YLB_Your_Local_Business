@@ -25,7 +25,7 @@
             </ul>
         </nav>
     </header>  
-      <section class="hero">
+      <section class="hero" id="product-info">
         <form action="/products/<%=product._id%>?_method=PUT" method="POST">
             <div>
                 <label for="category">Category:</label>
@@ -50,7 +50,7 @@
             <div>
                 <label for="images">Images:</label>
                 <input value="<%= product.images %>" type="text" name="images" id="images">
-            </div>
+            </div> 
             <div>
                 <input class="submit" type="submit" value="Submit Changes">
             </div>
