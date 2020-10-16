@@ -21,11 +21,9 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 
 ## Wireframes
 
-![landing:login](./public/images/businessPage.jpg)
-![signup:release](./assets/signup_release.JPG)
-![profile:edit](./assets/profile_edit.JPG)
-![release:edit](./assets/release_edit.JPG)
-![owner:calendar](./assets/app thoughts.JPG)
+![business:show](./public/images/businessPage.jpg)
+![product:show](./public/images/productShowPage.jpg)
+![profile:edit](./public/images/staticAboutCompanyPage.jpg)
 
 ## Data Models
 
@@ -33,7 +31,7 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 
 ## ERD
 
-![releaseERD](assets/releaseERD.JPG)
+![releaseERD](./public/images/ERD.jpg)
 
 ## Milestones
 
