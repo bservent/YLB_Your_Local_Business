@@ -23,13 +23,17 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 ## Wireframes
 
 ![business:show](./public/images/businessPage.jpg)
+
 ![product:show](./public/images/productShowPage.jpg)
+
 ![profile:edit](./public/images/staticAboutCompanyPage.jpg)
 
 ## Data Models
 
 Product Schema
+
 Business Schema
+
 User Schema
 
 ## ERD
