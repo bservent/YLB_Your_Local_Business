@@ -21,7 +21,7 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 
 ## Wireframes
 
-![landing:login](./assets/landing_login.JPG)
+![landing:login](./public/images/businessPage.jpg)
 ![signup:release](./assets/signup_release.JPG)
 ![profile:edit](./assets/profile_edit.JPG)
 ![release:edit](./assets/release_edit.JPG)
