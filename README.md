@@ -27,7 +27,9 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 
 ## Data Models
 
-![app thoughts](./assets/app_thoughts.JPG)
+Product Schema
+Business Schema
+User Schema
 
 ## ERD
 
@@ -35,15 +37,15 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 
 ## Milestones
 
-Create Frontend/Backend
+Create Schema/Populate
 
-Create Users
+Create Auth
 
-Create Release Forms
+Create Search
 
-Create Features Owner Doc
+Stylize Pages
 
-Create Landing
+Create ReadMe
 
 ## Dependencies Installed
 
@@ -51,19 +53,19 @@ bcryptjs
 
 body-parser
 
-connect-mongo
-
 express
 
 express-session
 
-handsontable
+method-override
+
+morgan
 
 mongodb
 
 mongoose
 
-nodemon
+dotenv
 
 ## Technologies
 
