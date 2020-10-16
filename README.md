@@ -1,11 +1,12 @@
 # project1ylb
-full-stack partner project
+ylb - Your Local Business
 
 # 
 
-## Why Release Pro?
+## ylb - what is it?
 
-Release Pro was created for engineering teams to use to help keep track of all the steps it takes for an app to be released for production. All the pertinent information is easily available for any member to find out about current releases and any previous release.
+YLB stands for your local business. Its a platform for local businesses to expand their reach to local communities.
+We are proud to serve local businesses and help them grow their customer base. A local business showcases the culture that they have grown up to love. The products reflect the area’s regional history and industries.This platform is there to guide customers to the local goods and services they need, all while adding to the local economy in an environtmentally friendly way.
 
 ## User Story
 
