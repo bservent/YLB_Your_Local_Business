@@ -7,7 +7,7 @@ const session = require('express-session');
 
 require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT || 4666;
+const PORT = process.env.PORT 
 
 
 // SET view engine
